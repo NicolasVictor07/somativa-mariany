@@ -1,0 +1,202 @@
+/* --- VARIAVEIS E RESET --- */
+/* :root guarda valores reutilizáveis para facilitar a manutenção */
+:root {
+    --cor-fundo: #0a0a0a;       /* Fundo preto para destaque */
+    --cor-secundaria: #141414;  /* Cinza escuro para contraste */
+    --cor-texto: #f0f0f0;       /* Texto claro para leitura */
+    --cor-texto-suave: #b0b0b0; /* Texto secundário */
+    --cor-destaque: #d4af37;    /* Dourado para ações importantes */
+    --cor-borda: #333;          /* Bordas sutis */
+    --fonte-principal: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Fonte legível */
+}
+
+/* Zera margens e preenchimentos padrão de todos os elementos */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Configurações básicas do corpo do site */
+body { 
+    font-family: var(--fonte-principal); 
+    background-color: var(--cor-fundo); 
+    color: var(--cor-texto); 
+    line-height: 1.6; /* Espaçamento entre linhas de texto */
+}
+
+/* Remove sublinhado de links  */
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; } /* Remove marcadores de listas */
+img { max-width: 100%; display: block; } /* Imagens responsivas */
+
+/* --- CLASSES GERAIS  --- */
+/* Centraliza conteúdo e define largura máxima */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Estilo padrão de botões */
+.botaozinho { 
+    display: inline-block; 
+    background-color: var(--cor-destaque); 
+    color: #000; 
+    padding: 12px 30px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    border: 2px solid var(--cor-destaque); 
+    border-radius: 2px; 
+    cursor: pointer; 
+}
+/* Efeito visual ao passar o mouse */
+.botaozinho:hover { background-color: transparent; color: var(--cor-destaque); }
+
+/* Títulos de seções centralizados e estilizados */
+.titulo-secao { 
+    text-align: center; 
+    font-size: 2rem; 
+    margin-bottom: 40px; 
+    color: var(--cor-destaque); 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+}
+
+/* --- CABEÇALHO --- */
+/* Fixo no topo e com fundo escuro */
+header { background-color: var(--cor-secundaria); border-bottom: 1px solid #222; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+/* Flexbox para alinhar logo e menu horizontalmente */
+.cabecalho-flex { display: flex; justify-content: space-between; align-items: center; } 
+/* Estilo do logo */
+.logo-site { font-size: 1.8rem; font-weight: bold; color: var(--cor-destaque); border: 2px solid var(--cor-destaque); padding: 5px 15px; letter-spacing: 3px; }
+/* Flexbox para itens do menu */
+nav ul { display: flex; gap: 30px; } 
+/* Links do menu */
+nav a { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--cor-texto-suave); }
+/* Destaque para link ativo ou hover */
+nav a:hover, nav a.ativo { color: var(--cor-destaque); } 
+
+/* --- HOME: BANNER PRINCIPAL --- */
+/* Banner ocupa 80% da altura da tela */
+.banner-principal {
+    height: 80vh; 
+    /* Degradê escuro sobre a imagem para melhorar leitura */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://jkshoppingdf.com.br/pycmokse/bfi_thumb/IMG_2563-7libqp4a48l7zppg2b3lfgq5xqdcx7hrrk6cc6oc33u.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex; align-items: center; justify-content: center; text-align: center; 
+}
+.banner-principal h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; }
+.banner-principal span { color: var(--cor-destaque); } /* Palavra destacada */
+.banner-principal p { font-size: 1.2rem; color: #ddd; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+/* --- HOME: DIFERENCIAIS --- */
+.secao-diferenciais { padding: 60px 0; background-color: var(--cor-secundaria); border-bottom: 1px solid var(--cor-borda); }
+/* Grid responsivo para os itens */
+.grid-vantagens { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center; } 
+.item-vantagem h3 { color: var(--cor-destaque); margin-bottom: 10px; font-size: 1.2rem; }
+.item-vantagem p { font-size: 0.9rem; color: var(--cor-texto-suave); }
+
+/* --- VITRINE DE PRODUTOS --- */
+.vitrine-produtos { padding: 80px 0; }
+/* Grid de produtos que se adapta */
+.grid-produtos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; } 
+
+/* Card do produto com borda e efeito hover */
+.cartaozinho { background-color: var(--cor-secundaria); border: 1px solid var(--cor-borda); transition: transform 0.3s, border-color 0.3s; }
+.cartaozinho:hover { transform: translateY(-5px); border-color: var(--cor-destaque); } 
+
+/* Container da imagem do produto */
+.moldura-img { 
+    width: 100%; 
+    height: 300px; 
+    background-color: #000; 
+    overflow: hidden; 
+    display: flex; align-items: center; justify-content: center; 
+}
+/* Ajuste da imagem dentro do container */
+.moldura-img img { max-width: 100%; max-height: 100%; object-fit: contain; } 
+
+/* Informações do card */
+.detalhes-card { padding: 20px; text-align: center; }
+.detalhes-card h3 { font-size: 1.1rem; margin-bottom: 5px; color: #fff; }
+.categoria-tag { display: block; font-size: 0.8rem; color: #666; margin-bottom: 15px; text-transform: uppercase; }
+.precinho { display: block; font-size: 1.4rem; color: var(--cor-destaque); font-weight: bold; margin-bottom: 20px; }
+
+/* --- PÁGINA PRODUTOS: FILTROS --- */
+.area-filtros { text-align: center; margin-bottom: 40px; padding: 20px; border-bottom: 1px solid #222; }
+.btn-filtro { background: transparent; border: 1px solid #333; color: #888; padding: 8px 16px; margin: 5px; cursor: pointer; border-radius: 20px; transition: 0.3s; }
+.btn-filtro:hover, .btn-filtro.ativo { border-color: var(--cor-destaque); color: var(--cor-destaque); }
+
+/* --- PÁGINA DETALHE --- */
+/* Layout flex para imagem e texto lado a lado */
+.container-detalhe { display: flex; flex-wrap: wrap; gap: 50px; padding: 60px 0; background-color: var(--cor-secundaria); border-bottom: 1px solid var(--cor-borda); }
+.col-esquerda { flex: 1; min-width: 300px; } /* Coluna da imagem */
+.moldura-grande { width: 100%; height: 500px; background-color: #1a1a1a; border: 1px solid #333; display: flex; align-items: center; justify-content: center; color: #555; font-size: 1.2rem; }
+.moldura-grande img { width: 100%; height: 100%; object-fit: contain; }
+
+.col-direita { flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center; } /* Coluna de texto */
+.marca-tag { color: var(--cor-texto-suave); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 10px; }
+.nome-produto { font-size: 2.5rem; line-height: 1.1; margin-bottom: 20px; color: #fff; }
+.preco-grande { font-size: 2.5rem; color: var(--cor-destaque); font-weight: bold; margin-bottom: 30px; display: block; }
+.desc-produto { font-size: 1rem; color: #ccc; margin-bottom: 30px; line-height: 1.8; border-top: 1px solid #333; padding-top: 20px; }
+
+/* Área de compra com quantidade e botão */
+.box-compra { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+.grupo-qtd { display: flex; flex-direction: column; }
+.texto-qtd { font-size: 0.8rem; margin-bottom: 5px; color: #aaa; }
+.input-qtd { padding: 12px; width: 80px; background: #0a0a0a; border: 1px solid #444; color: white; font-size: 1.1rem; text-align: center; border-radius: 4px; }
+.botao-comprar { background-color: var(--cor-destaque); color: #000; border: none; padding: 14px 40px; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; cursor: pointer; border-radius: 4px; flex-grow: 1; max-width: 300px; transition: 0.3s; }
+.botao-comprar:hover { background-color: #b59025; }
+
+.lista-beneficios { font-size: 0.9rem; color: #888; }
+.lista-beneficios li { margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+
+/* --- PÁGINA SOBRE --- */
+.intro-sobre { text-align: center; padding: 60px 20px; border-bottom: 1px solid var(--cor-borda); }
+.intro-sobre p { max-width: 800px; margin: 0 auto; font-size: 1.2rem; color: #ccc; }
+.secao-conteudo { padding: 60px 0; border-bottom: 1px solid var(--cor-borda); }
+.layout-lado-a-lado { display: flex; align-items: center; gap: 50px; } /* Flex para conteúdo misto */
+.col-texto { flex: 1; }
+.col-img { flex: 1; min-height: 300px; }
+.moldura-foto { width: 100%; height: 100%; min-height: 350px; background-color: #1a1a1a; display: flex; align-items: center; justify-content: center; color: #555; border: 1px solid #333; }
+.moldura-foto img { width: 100%; height: 100%; object-fit: cover; }
+
+.grid-tres { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; } /* Grid de 3 colunas */
+.pilar-item { background-color: var(--cor-secundaria); padding: 30px; border-radius: 4px; border: 1px solid var(--cor-borda); text-align: center; }
+.pilar-item h3 { color: var(--cor-destaque); margin-bottom: 15px; font-size: 1.3rem; }
+
+/* --- PÁGINA CONTATO --- */
+.layout-contato { display: flex; flex-wrap: wrap; gap: 50px; padding: 40px 0; }
+.area-form { flex: 2; min-width: 300px; } /* Área maior para o form */
+.form-principal { display: flex; flex-direction: column; gap: 20px; background-color: var(--cor-secundaria); padding: 30px; border: 1px solid var(--cor-borda); border-radius: 4px; }
+.campo-form { display: flex; flex-direction: column; gap: 8px; }
+.campo-form label { font-weight: bold; color: #ccc; font-size: 0.9rem; }
+.campo-form input, .campo-form textarea, .campo-form select { padding: 12px; background-color: #0a0a0a; border: 1px solid #333; color: white; border-radius: 4px; font-family: inherit; font-size: 1rem; }
+.campo-form input:focus, .campo-form textarea:focus, .campo-form select:focus { outline: none; border-color: var(--cor-destaque); }
+
+.barra-lateral { flex: 1; min-width: 250px; background-color: #1a1a1a; padding: 30px; border-radius: 4px; border-left: 3px solid var(--cor-destaque); height: fit-content; }
+.box-info { margin-bottom: 25px; }
+.box-info h3 { color: var(--cor-destaque); margin-bottom: 10px; font-size: 1.1rem; text-transform: uppercase; }
+.box-info p { color: #aaa; font-size: 0.95rem; line-height: 1.6; }
+
+/* --- RODAPÉ --- */
+footer { background-color: #000; padding: 60px 0 20px; border-top: 2px solid var(--cor-destaque); margin-top: 50px; }
+.grid-rodape { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.coluna-rodape h4 { color: var(--cor-destaque); margin-bottom: 20px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+.coluna-rodape ul li { margin-bottom: 10px; }
+.coluna-rodape ul li a { color: var(--cor-texto-suave); font-size: 0.9rem; }
+.coluna-rodape ul li a:hover { color: #fff; padding-left: 5px; }
+.copy-final { text-align: center; padding-top: 20px; border-top: 1px solid #222; color: #555; font-size: 0.8rem; }
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .banner-principal h1 { font-size: 2.2rem; } /* Reduz fonte em mobile */
+    .cabecalho-flex { flex-direction: column; gap: 15px; } /* Empilha header */
+    nav ul { gap: 15px; font-size: 0.85rem; }
+    
+    .container-detalhe { flex-direction: column; gap: 30px; } /* Empilha detalhes */
+    .nome-produto { font-size: 2rem; }
+    .box-compra { flex-direction: column; align-items: stretch; }
+    .botao-comprar { max-width: 100%; }
+
+    .layout-lado-a-lado { flex-direction: column; } /* Empilha sobre nós */
+    .layout-lado-a-lado.invertido { flex-direction: column-reverse; }
+
+    .layout-contato { flex-direction: column; } /* Empilha contato */
+}

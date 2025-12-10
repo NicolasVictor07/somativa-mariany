@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com a Relíquia Colecionáveis.">
+    <title>Atendimento | Relíquia Colecionáveis</title>
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container cabecalho-flex">
+            <a href="index.html" class="logo-site">RELÍQUIA</a>
+            <nav role="navigation" aria-label="Menu Principal">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Coleção</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html" class="ativo">Atendimento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <h1 class="titulo-secao" style="margin-top: 50px;">Canal do Colecionador</h1>
+            <p style="text-align: center; color: #aaa; max-width: 700px; margin: 0 auto;">
+                Tem dúvidas sobre a autenticidade de um item, prazos de entrega ou quer avaliar uma peça para venda? Nossa equipe de especialistas está pronta para ajudar.
+            </p>
+
+            <div class="layout-contato">
+                 
+                <!-- Coluna do Formulário de Contato -->
+                <div class="area-form">
+                <!-- Method="post" é usado para enviar dados de formulário -->
+                    <form action="#" method="post" class="form-principal">
+                        <!-- Campo Nome -->
+                        <div class="campo-form">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                        </div>
+                        <!-- Campo Email -->
+                        <div class="campo-form">
+                            <label for="email">E-mail de Contato</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+                        <!-- Campo Seleção de Assunto -->
+                        <div class="campo-form">
+                            <label for="assunto">Motivo do Contato</label>
+                            <select id="assunto" name="assunto">
+                                <option value="duvida">Dúvida sobre Produto</option>
+                                <option value="pedido">Status do Pedido</option>
+                                <option value="venda">Quero Vender (Avaliação)</option>
+                                <option value="outro">Outros Assuntos</option>
+                            </select>
+                        </div>
+                        <!-- Campo Mensagem -->
+                        <div class="campo-form">
+                            <label for="mensagem">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="6" placeholder="Descreva como podemos ajudar..." required></textarea>
+                        </div>
+                        <!-- Botão de Enviar -->
+                        <button type="submit" class="botaozinho" style="width: 100%; border: none;">Enviar Solicitação</button>
+                    </form>
+                </div>
+                <!-- Barra Lateral com Informações de Contato -->
+                <aside class="barra-lateral">
+                    <div class="box-info">
+                        <h3>Canais Diretos</h3>
+                        <p>📧 suporte@reliquiacolecionaveis.com</p>
+                        <p>📞 (11) 3333-0000</p>
+                        <p>📱 (11) 99999-9999 (WhatsApp)</p>
+                    </div>
+
+                    <div class="box-info">
+                        <h3>Showroom & Retirada</h3>
+                        <p>Av. Paulista, 1000 - Sala 42<br>Campinas - SP</p>
+                        <p style="font-size: 0.8rem; margin-top: 5px;">*Atendimento presencial apenas com hora marcada.</p>
+                    </div>
+
+                    <div class="box-info">
+                        <h3>Horário de Atendimento</h3>
+                        <p>Segunda a Sexta: 09h às 18h</p>
+                        <p>Sábado: 10h às 14h</p>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container grid-rodape">
+            <div class="coluna-rodape">
+                <h4>Relíquia Colecionáveis</h4>
+                <p style="color: #777; font-size: 0.9rem;">
+                    CNPJ: 00.000.000/0001-00<br>Campinas - SP
+                </p>
+            </div>
+            
+            <div class="coluna-rodape">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Todos os Produtos</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="contato.html">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="coluna-rodape">
+                <h4>Categorias</h4>
+                <ul>
+                    <li><a href="#">Marvel / DC</a></li>
+                    <li><a href="#">Star Wars</a></li>
+                    <li><a href="#">Animes</a></li>
+                    <li><a href="#">Props de Filmes</a></li>
+                </ul>
+            </div>
+
+            <div class="coluna-rodape">
+                <h4>Redes Sociais</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copy-final">
+            <p>&copy; 2025 Relíquia Colecionáveis. Projeto Senai Commerce - Aluno: Nicolas Victor.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
